@@ -11,7 +11,7 @@ struct TestView: View {
     var body: some View {
         VStack {
             GeometryReader { geo in
-                ScrollView(.vertical, showsIndicators: false) {
+                ScrollView() {
                    ForEach(testPrompts, id: \.id) { prompt in
                        HStack {
                            PromptView(
@@ -21,8 +21,6 @@ struct TestView: View {
                            )
                            //TODO:  Uncomment .aspectRatio and look at swift-frontend memory usage grow up up up
 //                            .aspectRatio(0.75, contentMode: .fit)
-                           .clipShape(RoundedRectangle(cornerRadius: 13))
-                           .id(prompt.id)
                            .frame(width: geo.size.width)
                        }
                    }
