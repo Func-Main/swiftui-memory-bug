@@ -12,8 +12,8 @@ struct TestView: View {
         VStack {
             GeometryReader { geo in
                 ScrollView() {
-                   ForEach(testPrompts, id: \.id) { prompt in
-                       HStack {
+                   VStack {
+                       ForEach(testPrompts, id: \.id) { prompt in
                            PromptView(
                                title: prompt.title,
                                subtitle: prompt.subtitle,
